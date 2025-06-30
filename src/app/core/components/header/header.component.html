@@ -2,7 +2,7 @@
   <a class="logo" routerLink="/"><span>Dummy</span></a>
   <app-nav-list [items]="items" />
   <span class="flex-spacer"></span>
-  <button mat-icon-button>
+  <button mat-icon-button (click)="handleLogout()">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>

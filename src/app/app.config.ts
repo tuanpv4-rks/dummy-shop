@@ -1,18 +1,39 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { provideStore } from '@ngxs/store';
-import { ProductState } from '@features/product/store/product.state';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { apiInterceptor } from '@core/interceptors/api.interceptor';
 import { errorInterceptor } from '@core/interceptors/error.interceptor';
+import { AuthState } from '@core/stores/auth.state';
+import { ProductState } from '@features/product/store/product.state';
+import { withNgxsStoragePlugin } from '@ngxs/storage-plugin';
+import { provideStore } from '@ngxs/store';
+import { routes } from './app.routes';
+import { tokenInterceptor } from '@core/interceptors/token.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([apiInterceptor, errorInterceptor])),
-    provideStore([ProductState]),
+    provideHttpClient(
+      withInterceptors([apiInterceptor, tokenInterceptor, errorInterceptor])
+    ),
+    provideStore(
+      [AuthState, ProductState],
+      withNgxsStoragePlugin({
+        keys: ['auth.token'],
+      })
+    ),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+    importProvidersFrom(MatSnackBarModule),
   ],
 };

@@ -12,7 +12,7 @@ export class ProductService {
   public getProducts(): Observable<ISimpleProduct[]> {
     const params = new HttpParams().set('limit', 0);
     return this.http
-      .get<IProductResponse>('/products', { params })
+      .get<IProductResponse>('/auth/products', { params })
       .pipe(map(({ products }) => products));
   }
 }
