@@ -3,7 +3,12 @@ export interface ICredentials {
   password: string;
 }
 
-export interface ILoginResponse {
+export interface IAuthToken {
+  accessToken: string;
+  refreshToken: string;
+}
+
+export interface ILoginResponse extends IAuthToken {
   id: number;
   username: string;
   email: string;
@@ -11,6 +16,4 @@ export interface ILoginResponse {
   lastName: string;
   gender: string;
   image: string;
-  accessToken: string;
-  refreshToken: string;
 }

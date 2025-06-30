@@ -21,13 +21,11 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(
-      withInterceptors([apiInterceptor, tokenInterceptor, errorInterceptor])
-    ),
+    provideHttpClient(withInterceptors([apiInterceptor, tokenInterceptor])),
     provideStore(
       [AuthState, ProductState],
       withNgxsStoragePlugin({
-        keys: ['auth.token'],
+        keys: ['auth.accessToken', 'auth.refreshToken'],
       })
     ),
     {

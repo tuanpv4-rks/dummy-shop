@@ -1,0 +1,49 @@
+.card {
+  height: 176px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.card__image {
+  width: 160px;
+  height: 160px;
+}
+
+.card__content {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.card__title,
+.card__description,
+.card__price {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card__description {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.card__price {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.card__button {
+  align-self: self-start;
+}

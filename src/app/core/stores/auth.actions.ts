@@ -9,3 +9,8 @@ export class Login {
 export class Logout {
   static readonly type = '[Auth] Logout';
 }
+
+export class Refresh {
+  static readonly type = '[Auth] Refresh';
+  constructor(public refreshToken: string) {}
+}

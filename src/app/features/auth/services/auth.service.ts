@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Logout } from '@core/stores/auth.actions';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ICredentials, ILoginResponse } from '../models/auth.model';
+import { IAuthToken, ICredentials, ILoginResponse } from '../models/auth.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +18,9 @@ export class AuthService {
 
   public logout(): void {
     this.store.dispatch(new Logout());
+  }
+
+  public refresh(refreshToken: string): Observable<IAuthToken> {
+    return this.http.post<ILoginResponse>('/auth/refresh', { refreshToken });
   }
 }
