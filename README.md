@@ -1,59 +1,62 @@
 # DummyShop
 
+A simple product browser application with a favorites feature, built with Angular.
+
+## ✨ Features
+
+-   **Authentication**: Secure login system (JWT-based).
+-   **Product Catalog**: View a list of products.
+-   **Favorites**: Add products to a personal favorites list and remove them.
+
+## 🛠️ Tech Stack
+
+-   **Angular**: A platform for building mobile and desktop web applications.
+-   **NGXS**: A state management pattern and library for Angular.
+-   **Angular Material**: A UI component library for Angular developers.
+-   **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+You need to have [Node.js](https://nodejs.org/) and npm installed on your machine. This project is tested with Node 22.
+
+### Installation & Running
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd dummy-shop
+    ```
+3.  Install the dependencies.
+    ```bash
+    npm install
+    ```
+4.  Start the development server:
+    ```bash
+    npm start
+    ```
+5.  Open your browser and navigate to `http://localhost:4200/`.
+
+## credentials
+- **Username**: `emilys`
+- **Password**: `emilyspass`
+## 🧪 Testing
+
+This project uses Karma and Jasmine for unit testing.
+
+To run the unit tests, execute the following command:
+
+```bash
+npm run test
+```
+## Most Complex parts
+The most complex part of this application is the product state management, which is implemented using NGXS. This implementation can be found in `src/app/features/product/store/`.
+This approach provides a centralized, predictable, and maintainable way to manage product-related data throughout the application.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
