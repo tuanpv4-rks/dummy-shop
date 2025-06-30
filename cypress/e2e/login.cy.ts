@@ -16,4 +16,4 @@ describe('Login Flow', () => {
     // Assert that the header is visible (or any other element that indicates a successful login)
     cy.get('app-header').should('be.visible');
   });
-}); 
+});

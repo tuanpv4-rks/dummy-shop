@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { inject, Injectable, OnDestroy, OnInit } from '@angular/core';
+import { inject, Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 
 @Injectable({
@@ -27,7 +27,7 @@ export class BreakpointService implements OnDestroy {
         Breakpoints.XLarge,
       ])
       .pipe(takeUntil(this.destroyed$))
-      .subscribe((result) => {
+      .subscribe(result => {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
             this.screenSize$.next(this.displayNameMap.get(query) ?? 'Unknown');

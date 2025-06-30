@@ -53,7 +53,7 @@ export class ProductListComponent implements OnInit {
   public cols = signal<number>(1);
 
   public ngOnInit(): void {
-    this.breakpointService.getScreenSize().subscribe((size) => {
+    this.breakpointService.getScreenSize().subscribe(size => {
       const cols = this.colsDefs.get(size) ?? 1;
       this.cols.set(cols);
     });

@@ -79,12 +79,12 @@ export class LoginComponent {
       )
       .subscribe({
         next: () => this.router.navigate(['/']),
-        error: (error) => this.toastService.open(error.message),
+        error: error => this.toastService.open(error.message),
       });
   }
 
   public clickEvent(event: MouseEvent): void {
-    this.hide.update((hide) => !hide);
+    this.hide.update(hide => !hide);
     event.stopPropagation();
   }
 }

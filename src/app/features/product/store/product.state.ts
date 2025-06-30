@@ -35,7 +35,7 @@ export class ProductState {
 
   @Selector()
   static getFavorites(state: ProductStateModel): ISimpleProduct[] {
-    return state.products.filter((product) =>
+    return state.products.filter(product =>
       state.favoriteIds.includes(product.id)
     );
   }
@@ -51,7 +51,7 @@ export class ProductState {
   ): Observable<ISimpleProduct[]> {
     return this.productService
       .getProducts()
-      .pipe(tap((products) => ctx.patchState({ products })));
+      .pipe(tap(products => ctx.patchState({ products })));
   }
 
   @Action(AddToFavorites)
@@ -75,7 +75,7 @@ export class ProductState {
   ): void {
     ctx.setState(
       patch<ProductStateModel>({
-        favoriteIds: removeItem<number>((id) => id === productId),
+        favoriteIds: removeItem<number>(id => id === productId),
       })
     );
   }

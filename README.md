@@ -4,16 +4,16 @@ A simple product browser application with a favorites feature, built with Angula
 
 ## ✨ Features
 
--   **Authentication**: Secure login system (JWT-based).
--   **Product Catalog**: View a list of products.
--   **Favorites**: Add products to a personal favorites list and remove them.
+- **Authentication**: Secure login system (JWT-based).
+- **Product Catalog**: View a list of products.
+- **Favorites**: Add products to a personal favorites list and remove them.
 
 ## 🛠️ Tech Stack
 
--   **Angular**: A platform for building mobile and desktop web applications.
--   **NGXS**: A state management pattern and library for Angular.
--   **Angular Material**: A UI component library for Angular developers.
--   **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Angular**: A platform for building mobile and desktop web applications.
+- **NGXS**: A state management pattern and library for Angular.
+- **Angular Material**: A UI component library for Angular developers.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 
 ## 🚀 Getting Started
 
@@ -44,8 +44,10 @@ You need to have [Node.js](https://nodejs.org/) and npm installed on your machin
 5.  Open your browser and navigate to `http://localhost:4200/`.
 
 ## credentials
+
 - **Username**: `emilys`
 - **Password**: `emilyspass`
+
 ## 🧪 Testing
 
 This project uses Karma and Jasmine for unit testing, and Cypress for end-to-end testing.
@@ -67,6 +69,7 @@ ng e2e
 ```
 
 ## Most Complex parts
+
 The most complex part of this application is the product state management, which is implemented using NGXS. This implementation can be found in `src/app/features/product/store/`.
 This approach provides a centralized, predictable, and maintainable way to manage product-related data throughout the application.
 

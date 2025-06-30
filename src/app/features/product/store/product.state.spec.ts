@@ -17,12 +17,26 @@ describe('ProductState', () => {
   let productService: jasmine.SpyObj<ProductService>;
 
   const mockProducts: ISimpleProduct[] = [
-    { id: 1, title: 'Product 1', price: 10, description: 'Desc 1', thumbnail: 'thumb1.jpg' },
-    { id: 2, title: 'Product 2', price: 20, description: 'Desc 2', thumbnail: 'thumb2.jpg' },
+    {
+      id: 1,
+      title: 'Product 1',
+      price: 10,
+      description: 'Desc 1',
+      thumbnail: 'thumb1.jpg',
+    },
+    {
+      id: 2,
+      title: 'Product 2',
+      price: 20,
+      description: 'Desc 2',
+      thumbnail: 'thumb2.jpg',
+    },
   ];
 
   beforeEach(() => {
-    const productServiceSpy = jasmine.createSpyObj('ProductService', ['getProducts']);
+    const productServiceSpy = jasmine.createSpyObj('ProductService', [
+      'getProducts',
+    ]);
 
     TestBed.configureTestingModule({
       imports: [NgxsModule.forRoot([ProductState])],
@@ -30,7 +44,9 @@ describe('ProductState', () => {
     });
 
     store = TestBed.inject(Store);
-    productService = TestBed.inject(ProductService) as jasmine.SpyObj<ProductService>;
+    productService = TestBed.inject(
+      ProductService
+    ) as jasmine.SpyObj<ProductService>;
   });
 
   it('should have correct initial state', () => {
@@ -52,7 +68,9 @@ describe('ProductState', () => {
     });
 
     it('should dispatch AddToFavorites action and update favoriteIds', () => {
-      store.reset({ product: { products: [], favoriteIds: [], isLoading: false } });
+      store.reset({
+        product: { products: [], favoriteIds: [], isLoading: false },
+      });
       store.dispatch(new AddToFavorites(1));
 
       const favoriteIds = store.selectSnapshot(ProductState.getFavoriteIds);
@@ -60,7 +78,9 @@ describe('ProductState', () => {
     });
 
     it('should dispatch RemoveFromFavorites action and update favoriteIds', () => {
-      store.reset({ product: { products: [], favoriteIds: [1, 2], isLoading: false } });
+      store.reset({
+        product: { products: [], favoriteIds: [1, 2], isLoading: false },
+      });
       store.dispatch(new RemoveFromFavorites(1));
 
       const favoriteIds = store.selectSnapshot(ProductState.getFavoriteIds);

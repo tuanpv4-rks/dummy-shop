@@ -1,15 +1,14 @@
 <ul class="nav">
   @for (item of items(); track $index) {
-  <li class="nav__item">
-    <a
-      mat-button
-      class="nav__link"
-      [routerLink]="item.routeLink"
-      routerLinkActive="nav__link--active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      {{ item.label }}
-    </a>
-  </li>
+    <li class="nav__item">
+      <a
+        mat-button
+        class="nav__link"
+        [routerLink]="item.routeLink"
+        routerLinkActive="nav__link--active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        {{ item.label }}
+      </a>
+    </li>
   }
 </ul>

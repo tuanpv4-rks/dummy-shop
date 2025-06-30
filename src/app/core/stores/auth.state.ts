@@ -39,7 +39,7 @@ export class AuthState {
     { credentials }: Login
   ): Observable<ILoginResponse> {
     return this.authService.login(credentials).pipe(
-      tap((result) => {
+      tap(result => {
         const { accessToken, refreshToken } = result;
         ctx.patchState({ accessToken, refreshToken });
       })
@@ -57,7 +57,7 @@ export class AuthState {
     { refreshToken }: Refresh
   ): Observable<IAuthToken> {
     return this.authService.refresh(refreshToken).pipe(
-      tap((result) => {
+      tap(result => {
         const { accessToken, refreshToken } = result;
         ctx.patchState({ accessToken, refreshToken });
       })

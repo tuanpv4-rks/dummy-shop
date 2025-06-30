@@ -25,7 +25,7 @@ export function handle401Error(
       });
       return next(newRequest);
     }),
-    catchError((err) => {
+    catchError(err => {
       console.log(err);
       store.dispatch(new Logout());
       return throwError(() => err);

@@ -1,21 +1,21 @@
 <div class="wrapper">
   @if (title()) {
-  <p class="title">{{ title() }}</p>
-  } @if (items().length) {
-  <mat-list class="list">
-    <cdk-virtual-scroll-viewport scrollWindow itemSize="177">
-      <div *cdkVirtualFor="let item of items()" class="list__item">
-        <mat-list-item>
-          <app-product-card
-            [item]="item"
-            [favorite]="favoriteIds().includes(item.id)"
-          />
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </div>
-    </cdk-virtual-scroll-viewport>
-  </mat-list>
+    <p class="title">{{ title() }}</p>
+  }
+  @if (items().length) {
+    <mat-list class="list">
+      <cdk-virtual-scroll-viewport scrollWindow itemSize="177">
+        <div *cdkVirtualFor="let item of items()" class="list__item">
+          <mat-list-item>
+            <app-product-card
+              [item]="item"
+              [favorite]="favoriteIds().includes(item.id)" />
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </mat-list>
   } @else {
-  <p class="empty-message">{{ emptyMessage() }}</p>
+    <p class="empty-message">{{ emptyMessage() }}</p>
   }
 </div>

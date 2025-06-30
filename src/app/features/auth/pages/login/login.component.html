@@ -9,7 +9,7 @@
           <mat-label>Username</mat-label>
           <input type="text" matInput formControlName="username" />
           @if (username.hasError('required')) {
-          <mat-error>Username is required</mat-error>
+            <mat-error>Username is required</mat-error>
           }
         </mat-form-field>
         <mat-form-field [hideRequiredMarker]="true">
@@ -17,26 +17,23 @@
           <input
             [type]="hide() ? 'password' : 'text'"
             matInput
-            formControlName="password"
-          />
+            formControlName="password" />
           <button
             type="button"
             mat-icon-button
             matSuffix
-            (click)="clickEvent($event)"
-          >
-            <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+            (click)="clickEvent($event)">
+            <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
           @if (password.hasError('required')) {
-          <mat-error>Password is required</mat-error>
+            <mat-error>Password is required</mat-error>
           }
         </mat-form-field>
         <button
           type="submit"
           mat-flat-button
-          [disabled]="loginForm.invalid || isSubmitting()"
-        >
-          {{ isSubmitting() ? "Logging in..." : "Login" }}
+          [disabled]="loginForm.invalid || isSubmitting()">
+          {{ isSubmitting() ? 'Logging in...' : 'Login' }}
         </button>
       </form>
     </mat-card-content>

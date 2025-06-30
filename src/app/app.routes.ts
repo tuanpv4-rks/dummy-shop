@@ -7,7 +7,7 @@ export const routes: Routes = [
     canActivate: [authGuard],
     loadComponent: () =>
       import('@core/components/layout/layout.component').then(
-        (c) => c.LayoutComponent
+        c => c.LayoutComponent
       ),
     children: [
       {
@@ -20,7 +20,7 @@ export const routes: Routes = [
         title: 'Products',
         loadComponent: () =>
           import('@features/product/pages/products/products.component').then(
-            (c) => c.ProductsComponent
+            c => c.ProductsComponent
           ),
       },
       {
@@ -28,7 +28,7 @@ export const routes: Routes = [
         title: 'Favorites',
         loadComponent: () =>
           import('@features/product/pages/favorites/favorites.component').then(
-            (c) => c.FavoritesComponent
+            c => c.FavoritesComponent
           ),
       },
     ],
@@ -37,7 +37,7 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('@features/auth/pages/login/login.component').then(
-        (c) => c.LoginComponent
+        c => c.LoginComponent
       ),
   },
   {

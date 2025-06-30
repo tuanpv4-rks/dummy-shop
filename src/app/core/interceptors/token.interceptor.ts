@@ -17,7 +17,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   });
 
   return next(request).pipe(
-    catchError((error) => {
+    catchError(error => {
       if (
         error instanceof HttpErrorResponse &&
         error.status === 401 &&

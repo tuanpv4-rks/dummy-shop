@@ -5,8 +5,7 @@
       height="160"
       [ngSrc]="item().thumbnail"
       [alt]="item().title"
-      priority
-    />
+      priority />
   </div>
   <div class="card__content">
     <p class="card__title">{{ item().title }}</p>
@@ -15,17 +14,16 @@
     </p>
     <p class="card__price">{{ item().price | currency }}</p>
   </div>
-  @if(favorite()) {
-  <button
-    class="card__button"
-    mat-icon-button
-    (click)="handleRemove(item().id)"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
+  @if (favorite()) {
+    <button
+      class="card__button"
+      mat-icon-button
+      (click)="handleRemove(item().id)">
+      <mat-icon>favorite</mat-icon>
+    </button>
   } @else {
-  <button class="card__button" mat-icon-button (click)="handleAdd(item().id)">
-    <mat-icon>favorite_border</mat-icon>
-  </button>
+    <button class="card__button" mat-icon-button (click)="handleAdd(item().id)">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
   }
 </div>
