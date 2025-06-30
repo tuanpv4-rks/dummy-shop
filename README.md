@@ -48,13 +48,24 @@ You need to have [Node.js](https://nodejs.org/) and npm installed on your machin
 - **Password**: `emilyspass`
 ## 🧪 Testing
 
-This project uses Karma and Jasmine for unit testing.
+This project uses Karma and Jasmine for unit testing, and Cypress for end-to-end testing.
+
+### Unit Tests
 
 To run the unit tests, execute the following command:
 
 ```bash
 npm run test
 ```
+
+### End-to-End Tests
+
+To run the end-to-end tests with Cypress, use the following command. This will open the Cypress Test Runner, where you can run the tests in a browser.
+
+```bash
+ng e2e
+```
+
 ## Most Complex parts
 The most complex part of this application is the product state management, which is implemented using NGXS. This implementation can be found in `src/app/features/product/store/`.
 This approach provides a centralized, predictable, and maintainable way to manage product-related data throughout the application.
