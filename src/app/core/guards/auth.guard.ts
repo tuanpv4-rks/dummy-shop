@@ -1,10 +1,17 @@
 import { inject } from '@angular/core';
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { AuthState } from '@core/stores/auth.state';
 import { Store } from '@ngxs/store';
 
 export const authGuard: CanActivateFn = () => {
   const store = inject(Store);
+  const router = inject(Router);
   const isAuthenticated = store.selectSnapshot(AuthState.getIsAuthenticated);
-  return isAuthenticated;
+
+  if (isAuthenticated) {
+    return true;
+  } else {
+    router.navigate(['/login']);
+    return false;
+  }
 };
