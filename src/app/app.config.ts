@@ -9,7 +9,6 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { apiInterceptor } from '@core/interceptors/api.interceptor';
-import { errorInterceptor } from '@core/interceptors/error.interceptor';
 import { AuthState } from '@core/stores/auth.state';
 import { ProductState } from '@features/product/store/product.state';
 import { withNgxsStoragePlugin } from '@ngxs/storage-plugin';

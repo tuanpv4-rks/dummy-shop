@@ -129,7 +129,8 @@
           "options": {
             "devServerTarget": "dummy-shop:serve",
             "watch": true,
-            "headless": false
+            "headless": false,
+            "baseUrl": "http://localhost:4200"
           },
           "configurations": {
             "production": {
