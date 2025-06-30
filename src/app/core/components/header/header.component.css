@@ -1,0 +1,9 @@
+.header {
+  background-color: var(--mat-sys-primary-container);
+}
+
+.logo {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 2rem;
+}

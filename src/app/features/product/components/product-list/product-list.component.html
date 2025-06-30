@@ -1,0 +1,15 @@
+@if (title()) {
+<p class="title">{{ title() }}</p>
+}
+<mat-list>
+  <cdk-virtual-scroll-viewport scrollWindow itemSize="48">
+    <mat-list-item *cdkVirtualFor="let item of items()">
+      <span>{{ item.title }}</span>
+      @if(favoriteIds().includes(item.id)) {
+      <button mat-button (click)="handleRemove(item.id)">Unfavorite</button>
+      } @else {
+      <button mat-button (click)="handleAdd(item.id)">Favorite</button>
+      }
+    </mat-list-item>
+  </cdk-virtual-scroll-viewport>
+</mat-list>

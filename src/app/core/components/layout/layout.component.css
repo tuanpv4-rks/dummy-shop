@@ -1,0 +1,19 @@
+.layout {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.layout__header {
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.layout__main {
+  padding-top: 4rem;
+}
