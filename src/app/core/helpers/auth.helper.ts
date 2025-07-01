@@ -1,6 +1,6 @@
 import { HttpEvent, HttpHandlerFn, HttpRequest } from '@angular/common/http';
-import { Logout, Refresh } from '@core/stores/auth.actions';
-import { AuthState } from '@core/stores/auth.state';
+import { Logout, Refresh } from '@features/auth/stores/auth.actions';
+import { AuthState } from '@features/auth/stores/auth.state';
 import { Store } from '@ngxs/store';
 import { catchError, Observable, switchMap, throwError } from 'rxjs';
 

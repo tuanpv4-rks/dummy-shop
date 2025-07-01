@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Logout } from '@core/stores/auth.actions';
+import { Logout } from '@features/auth/stores/auth.actions';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { IAuthToken, ICredentials, ILoginResponse } from '../models/auth.model';

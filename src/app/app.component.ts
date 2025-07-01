@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { Logout } from '@core/stores/auth.actions';
+import { Logout } from '@features/auth/stores/auth.actions';
 import { Actions, ofActionDispatched } from '@ngxs/store';
 
 @Component({

@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { ISimpleProduct } from '@features/product/models/product.model';
-import { ProductState } from '@features/product/store/product.state';
+import { ProductState } from '@features/product/stores/product.state';
 import { Store } from '@ngxs/store';
 import { BreakpointService } from '@shared/services/breakpoint.service';
 import { ProductCardComponent } from '../product-card/product-card.component';

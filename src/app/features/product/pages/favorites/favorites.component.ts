@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
 import { Store } from '@ngxs/store';
-import { ProductState } from '@features/product/store/product.state';
+import { ProductState } from '@features/product/stores/product.state';
 import { ISimpleProduct } from '@features/product/models/product.model';
 
 @Component({

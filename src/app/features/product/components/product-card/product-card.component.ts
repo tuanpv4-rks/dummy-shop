@@ -8,7 +8,7 @@ import { ISimpleProduct } from '@features/product/models/product.model';
 import {
   AddToFavorites,
   RemoveFromFavorites,
-} from '@features/product/store/product.actions';
+} from '@features/product/stores/product.actions';
 import { Store } from '@ngxs/store';
 
 @Component({

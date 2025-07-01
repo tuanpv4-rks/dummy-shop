@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-import { Login } from '@core/stores/auth.actions';
+import { Login } from '@features/auth/stores/auth.actions';
 import { ICredentials } from '@features/auth/models/auth.model';
 import { AuthService } from '@features/auth/services/auth.service';
 import { Store } from '@ngxs/store';
