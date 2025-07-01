@@ -9,6 +9,15 @@ export default defineConfig({
     devServer: {
       framework: 'angular',
       bundler: 'webpack',
+      options: {
+        projectConfig: {
+          root: '',
+          sourceRoot: 'src',
+          buildOptions: {
+            tsConfig: 'cypress/tsconfig.json',
+          },
+        },
+      },
     },
     specPattern: '**/*.cy.ts',
   },
