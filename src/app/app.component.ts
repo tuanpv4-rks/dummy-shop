@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   private actions$ = inject(Actions);
   private router = inject(Router);
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.actions$.pipe(ofActionDispatched(Logout)).subscribe(() => {
       this.router.navigate(['/login']);
     });

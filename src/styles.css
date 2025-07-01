@@ -36,6 +36,10 @@ body {
   flex: 1 1 auto;
 }
 
+.product-list .cdk-virtual-scroll-content-wrapper {
+  width: 100%;
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -59,8 +63,4 @@ body {
   .container {
     max-width: 960px;
   }
-}
-
-.cdk-virtual-scroll-content-wrapper {
-  width: 100%;
 }

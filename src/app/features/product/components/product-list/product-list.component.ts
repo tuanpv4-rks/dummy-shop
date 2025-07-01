@@ -1,21 +1,13 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import {
-  Component,
-  inject,
-  input,
-  OnInit,
-  signal,
-  Signal,
-} from '@angular/core';
+import { Component, inject, input, signal, Signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { ISimpleProduct } from '@features/product/models/product.model';
 import { ProductState } from '@features/product/stores/product.state';
 import { Store } from '@ngxs/store';
-import { BreakpointService } from '@shared/services/breakpoint.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-product-list',
@@ -30,9 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
   private store = inject(Store);
-  private breakpointService = inject(BreakpointService);
 
   public items = input.required<ISimpleProduct[]>();
   public title = input<string>('');
@@ -42,20 +33,11 @@ export class ProductListComponent implements OnInit {
     ProductState.getFavoriteIds
   );
 
-  private colsDefs = new Map<string, number>([
-    ['XSmall', 1],
-    ['Small', 1],
-    ['Medium', 2],
-    ['Large', 2],
-    ['XLarge', 2],
-  ]);
+  public itemHeight = 176;
 
   public cols = signal<number>(1);
 
-  public ngOnInit(): void {
-    this.breakpointService.getScreenSize().subscribe(size => {
-      const cols = this.colsDefs.get(size) ?? 1;
-      this.cols.set(cols);
-    });
+  public trackByFn(index: number, item: ISimpleProduct): number {
+    return item.id;
   }
 }

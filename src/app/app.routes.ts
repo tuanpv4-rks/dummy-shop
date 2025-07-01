@@ -35,6 +35,7 @@ export const routes: Routes = [
   },
   {
     path: 'login',
+    title: 'Login',
     loadComponent: () =>
       import('@features/auth/pages/login/login.component').then(
         c => c.LoginComponent

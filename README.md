@@ -1,21 +1,21 @@
 # DummyShop
 
-A simple product browser application with a favorites feature, built with Angular.
+A simple product browser application with a favorites feature, built with Angular. This app is designed to be simple and mobile-friendly for small screens, with plans to enhance the layout and features for larger screens in future updates.
 
-## ✨ Features
+## Features
 
 - **Authentication**: Secure login system (JWT-based).
 - **Product Catalog**: View a list of products.
 - **Favorites**: Add products to a personal favorites list and remove them.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Angular**: A platform for building mobile and desktop web applications.
 - **NGXS**: A state management pattern and library for Angular.
 - **Angular Material**: A UI component library for Angular developers.
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine.
 
@@ -48,7 +48,7 @@ You need to have [Node.js](https://nodejs.org/) and npm installed on your machin
 - **Username**: `emilys`
 - **Password**: `emilyspass`
 
-## 🧪 Testing
+## Testing
 
 This project uses Karma and Jasmine for unit testing, and Cypress for end-to-end testing.
 
@@ -68,9 +68,9 @@ To run the end-to-end tests with Cypress, use the following command. This will o
 npm run e2e
 ```
 
-## 🧩 Most Complex Parts
+## Most Complex Parts
 
-### 🗂️ State Management with NGXS
+### State Management with NGXS
 
 The most complex part of this demo is implementing **state management** using [NGXS](https://www.ngxs.io/). This is essential for managing and synchronizing application data across multiple components, specifically for:
 
@@ -79,7 +79,7 @@ The most complex part of this demo is implementing **state management** using [N
 
 Each state is responsible for its own set of actions, selectors, and side effects (such as API calls), ensuring the UI remains reactive and consistent.
 
-### 🚩 Why Is It Complex?
+### Why Is It Complex?
 
 Without a state management solution, handling shared data across components can become:
 
@@ -87,7 +87,7 @@ Without a state management solution, handling shared data across components can 
 - **Unscalable**: As the app grows, maintaining a single source of truth or managing multiple copies of data in different components becomes challenging.
 - **Critical for authentication and user-specific data**: Managing tokens, permissions, and user-specific product data (like favorites) requires clear, centralized logic to ensure stability and consistency.
 
-### ✅ How We Resolved It
+### How We Resolved It
 
 We use **NGXS** to address these challenges because:
 

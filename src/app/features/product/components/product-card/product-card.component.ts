@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
+import { CurrencyPipe, NgOptimizedImage, NgStyle } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -20,6 +20,7 @@ import { Store } from '@ngxs/store';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    NgStyle,
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
@@ -29,6 +30,7 @@ export class ProductCardComponent {
 
   public item = input.required<ISimpleProduct>();
   public favorite = input.required<boolean>();
+  public height = input<number>(200);
 
   public handleAdd(productId: number): void {
     this.store.dispatch(new AddToFavorites(productId));
