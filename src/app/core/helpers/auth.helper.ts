@@ -13,7 +13,6 @@ export function handle401Error(
   return store.dispatch(new Refresh(refreshToken)).pipe(
     switchMap(() => {
       const newAccessToken = store.selectSnapshot(AuthState.getAccessToken);
-      console.log(newAccessToken);
       if (!newAccessToken) {
         store.dispatch(new Logout());
         return throwError(() => new Error('Refresh failed - no new token'));
@@ -26,7 +25,6 @@ export function handle401Error(
       return next(newRequest);
     }),
     catchError(err => {
-      console.log(err);
       store.dispatch(new Logout());
       return throwError(() => err);
     })
