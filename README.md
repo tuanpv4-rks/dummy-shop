@@ -65,7 +65,7 @@ npm run test
 To run the end-to-end tests with Cypress, use the following command. This will open the Cypress Test Runner, where you can run the tests in a browser.
 
 ```bash
-ng e2e
+npm run e2e
 ```
 
 ## Most Complex parts
