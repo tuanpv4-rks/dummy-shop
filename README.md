@@ -43,7 +43,7 @@ You need to have [Node.js](https://nodejs.org/) and npm installed on your machin
     ```
 5.  Open your browser and navigate to `http://localhost:4200/`.
 
-## credentials
+## Credentials
 
 - **Username**: `emilys`
 - **Password**: `emilyspass`
@@ -68,9 +68,34 @@ To run the end-to-end tests with Cypress, use the following command. This will o
 npm run e2e
 ```
 
-## Most Complex parts
+## 🧩 Most Complex Parts
 
-The most complex part of this application is the product state management, which is implemented using NGXS. This implementation can be found in `src/app/features/product/store/`.
-This approach provides a centralized, predictable, and maintainable way to manage product-related data throughout the application.
+### 🗂️ State Management with NGXS
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+The most complex part of this demo is implementing **state management** using [NGXS](https://www.ngxs.io/). This is essential for managing and synchronizing application data across multiple components, specifically for:
+
+- **Authentication** (`AuthState`)
+- **Product Data** (`ProductState`)
+
+Each state is responsible for its own set of actions, selectors, and side effects (such as API calls), ensuring the UI remains reactive and consistent.
+
+### 🚩 Why Is It Complex?
+
+Without a state management solution, handling shared data across components can become:
+
+- **Messy and error-prone**: Data must be passed manually between components or stored in services, making it difficult to control updates and increasing the risk of bugs.
+- **Unscalable**: As the app grows, maintaining a single source of truth or managing multiple copies of data in different components becomes challenging.
+- **Critical for authentication and user-specific data**: Managing tokens, permissions, and user-specific product data (like favorites) requires clear, centralized logic to ensure stability and consistency.
+
+### ✅ How We Resolved It
+
+We use **NGXS** to address these challenges because:
+
+- **Declarative and Predictable**  
+   State is defined via classes (`@State()`), and updates are triggered via actions (`@Action()`), making data flows predictable and easy to test.
+
+- **Cleaner Code & Separation of Concerns**  
+   NGXS encourages keeping business logic out of components, resulting in more maintainable and modular code.
+
+- **Plugin Support**  
+   NGXS offers plugins like the **NGXS Storage Plugin** to persist state (e.g., saving tokens to `localStorage`), making it easy to maintain user sessions across reloads.
