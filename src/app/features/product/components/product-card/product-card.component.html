@@ -3,9 +3,9 @@
     <img
       width="160"
       height="160"
-      [ngSrc]="item().thumbnail"
+      [src]="item().thumbnail"
       [alt]="item().title"
-      priority />
+      appImgFallback />
   </div>
   <div class="card__content">
     <p class="card__title">{{ item().title }}</p>

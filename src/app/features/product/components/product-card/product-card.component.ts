@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgOptimizedImage, NgStyle } from '@angular/common';
+import { CurrencyPipe, NgStyle } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -10,17 +10,18 @@ import {
   RemoveFromFavorites,
 } from '@features/product/stores/product.actions';
 import { Store } from '@ngxs/store';
+import { ImgFallbackDirective } from '@shared/directives/img-fallback.directive';
 
 @Component({
   selector: 'app-product-card',
   imports: [
     MatCardModule,
     CurrencyPipe,
-    NgOptimizedImage,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
     NgStyle,
+    ImgFallbackDirective,
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
