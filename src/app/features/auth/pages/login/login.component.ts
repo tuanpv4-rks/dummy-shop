@@ -79,7 +79,7 @@ export class LoginComponent {
       )
       .subscribe({
         next: () => this.router.navigate(['/']),
-        error: error => this.toastService.open(error.message),
+        error: error => this.toastService.open(error.error.message),
       });
   }
 
