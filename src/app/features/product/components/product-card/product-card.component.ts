@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgStyle } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -10,6 +10,7 @@ import {
   RemoveFromFavorites,
 } from '@features/product/stores/product.actions';
 import { Store } from '@ngxs/store';
+import { FavoriteToggleComponent } from '@shared/components/favorite-toggle/favorite-toggle.component';
 import { ImgFallbackDirective } from '@shared/directives/img-fallback.directive';
 
 @Component({
@@ -20,8 +21,8 @@ import { ImgFallbackDirective } from '@shared/directives/img-fallback.directive'
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    NgStyle,
     ImgFallbackDirective,
+    FavoriteToggleComponent,
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
@@ -31,13 +32,15 @@ export class ProductCardComponent {
 
   public item = input.required<ISimpleProduct>();
   public favorite = input.required<boolean>();
-  public height = input<number>(200);
 
-  public handleAdd(productId: number): void {
-    this.store.dispatch(new AddToFavorites(productId));
-  }
+  public handleFavorite(favorite: boolean): void {
+    const id = this.item().id;
+    if (!id) return;
 
-  public handleRemove(productId: number): void {
-    this.store.dispatch(new RemoveFromFavorites(productId));
+    if (favorite) {
+      this.store.dispatch(new AddToFavorites(id));
+    } else {
+      this.store.dispatch(new RemoveFromFavorites(id));
+    }
   }
 }

@@ -1,4 +1,4 @@
-<div class="card" [ngStyle]="{ 'height.px': height() }">
+<div class="card">
   <div class="card__image">
     <img
       width="160"
@@ -14,16 +14,9 @@
     </p>
     <p class="card__price">{{ item().price | currency }}</p>
   </div>
-  @if (favorite()) {
-    <button
-      class="card__button"
-      mat-icon-button
-      (click)="handleRemove(item().id)">
-      <mat-icon>favorite</mat-icon>
-    </button>
-  } @else {
-    <button class="card__button" mat-icon-button (click)="handleAdd(item().id)">
-      <mat-icon>favorite_border</mat-icon>
-    </button>
-  }
+  <div class="card__button">
+    <app-favorite-toggle
+      [initialValue]="favorite()"
+      (favoriteChanged)="handleFavorite($event)" />
+  </div>
 </div>

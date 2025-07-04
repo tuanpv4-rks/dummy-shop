@@ -1,5 +1,6 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { Component, inject, input, signal, Signal } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { Component, inject, input, Signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,6 +19,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
     ScrollingModule,
     ProductCardComponent,
     MatDividerModule,
+    NgStyle,
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
@@ -34,8 +36,6 @@ export class ProductListComponent {
   );
 
   public itemHeight = 176;
-
-  public cols = signal<number>(1);
 
   public trackByFn(index: number, item: ISimpleProduct): number {
     return item.id;

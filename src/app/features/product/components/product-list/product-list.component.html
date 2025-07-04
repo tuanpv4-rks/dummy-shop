@@ -4,10 +4,11 @@
   }
   @if (items().length) {
     <cdk-virtual-scroll-viewport scrollWindow [itemSize]="itemHeight">
-      <div *cdkVirtualFor="let item of items(); trackBy: trackByFn">
+      <div
+        [ngStyle]="{ 'height.px': itemHeight }"
+        *cdkVirtualFor="let item of items(); trackBy: trackByFn">
         <app-product-card
           [item]="item"
-          [height]="itemHeight"
           [favorite]="favoriteIds().includes(item.id)" />
         <mat-divider></mat-divider>
       </div>
